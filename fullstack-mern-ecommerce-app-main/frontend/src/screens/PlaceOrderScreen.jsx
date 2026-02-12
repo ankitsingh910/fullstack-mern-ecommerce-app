@@ -63,8 +63,8 @@ const PlaceOrderScreen = () => {
           className="lg:col-span-2 space-y-6"
         >
           {/* Shipping */}
-          <Card>
-            <CardContent>
+          <div className="rounded-2xl shadow-md bg-white">
+            <div className="p-6">
               <h2 className="text-xl font-semibold flex items-center gap-2 mb-3">
                 <Truck className="w-5 h-5 text-blue-600" /> Shipping
               </h2>
@@ -72,24 +72,24 @@ const PlaceOrderScreen = () => {
                 <strong>Address:</strong> {cart.shippingAddress.address}, {cart.shippingAddress.city}{" "}
                 {cart.shippingAddress.postalCode}, {cart.shippingAddress.country}
               </p>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
 
           {/* Payment */}
-          <Card>
-            <CardContent>
+          <div className="rounded-2xl shadow-md bg-white">
+            <div className="p-6">
               <h2 className="text-xl font-semibold flex items-center gap-2 mb-3">
                 <CreditCard className="w-5 h-5 text-blue-600" /> Payment Method
               </h2>
               <p className="text-gray-700">
                 <strong>Method:</strong> {cart.paymentMethod}
               </p>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
 
           {/* Items */}
-          <Card>
-            <CardContent>
+          <div className="rounded-2xl shadow-md bg-white">
+            <div className="p-6">
               <h2 className="text-xl font-semibold flex items-center gap-2 mb-3">
                 <ShoppingCart className="w-5 h-5 text-blue-600" /> Order Items
               </h2>
@@ -123,8 +123,8 @@ const PlaceOrderScreen = () => {
                   ))}
                 </div>
               )}
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </motion.div>
 
         {/* RIGHT SIDE: Summary */}
@@ -134,8 +134,8 @@ const PlaceOrderScreen = () => {
           transition={{ duration: 0.4 }}
           className="space-y-6"
         >
-          <Card>
-            <CardContent>
+          <div className="rounded-2xl shadow-md bg-white">
+            <div className="p-6">
               <h2 className="text-xl font-semibold flex items-center gap-2 mb-4">
                 <Package className="w-5 h-5 text-blue-600" /> Order Summary
               </h2>
@@ -165,17 +165,17 @@ const PlaceOrderScreen = () => {
                 </Message>
               )}
 
-              <Button
+              <button
                 onClick={placeOrderHandler}
                 disabled={cart.cartItems.length === 0}
-                className="w-full mt-6 flex items-center justify-center gap-2"
+                className="w-full mt-6 flex items-center justify-center gap-2 bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed rounded-2xl py-2"
               >
                 Place Order <ArrowRight className="w-5 h-5" />
-              </Button>
+              </button>
 
               {isLoading && <Loader />}
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </motion.div>
       </div>
     </>

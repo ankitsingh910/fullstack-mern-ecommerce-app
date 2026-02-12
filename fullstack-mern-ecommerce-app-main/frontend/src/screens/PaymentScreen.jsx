@@ -44,40 +44,42 @@ const PaymentScreen = () => {
         transition={{ duration: 0.4 }}
         className="max-w-xl mx-auto mt-8"
       >
-        <Card className="p-6 rounded-2xl shadow-md">
-          <CardContent>
-            <h1 className="text-2xl font-bold mb-6 flex items-center gap-2">
-              <CreditCard className="w-6 h-6 text-blue-600" />
-              Payment Method
-            </h1>
+        <div className="p-6 rounded-2xl shadow-md bg-white">
+          <h1 className="text-2xl font-bold mb-6 flex items-center gap-2">
+            <CreditCard className="w-6 h-6 text-blue-600" />
+            Payment Method
+          </h1>
 
-            <form onSubmit={submitHandler} className="space-y-6">
-              <div>
-                <Label className="text-base mb-2 block">Select Method</Label>
-                <RadioGroup
-                  defaultValue={paymentMethod}
-                  onValueChange={setPaymentMethod}
-                  className="space-y-3"
+          <form onSubmit={submitHandler} className="space-y-6">
+            <div>
+              <label className="text-base mb-2 block">Select Method</label>
+              <div className="space-y-3">
+                <label
+                  htmlFor="paypal"
+                  className="flex items-center space-x-3 rounded-lg border p-3 cursor-pointer hover:shadow-sm"
                 >
-                  <div className="flex items-center space-x-3 rounded-lg border p-3 cursor-pointer hover:shadow-sm">
-                    <RadioGroupItem value="PayPal" id="paypal" />
-                    <Label htmlFor="paypal" className="cursor-pointer">
-                      PayPal or Credit Card
-                    </Label>
-                  </div>
-                </RadioGroup>
+                  <input
+                    type="radio"
+                    name="paymentMethod"
+                    id="paypal"
+                    value="PayPal"
+                    checked={paymentMethod === "PayPal"}
+                    onChange={(e) => setPaymentMethod(e.target.value)}
+                  />
+                  <span>PayPal or Credit Card</span>
+                </label>
               </div>
+            </div>
 
-              <Button
-                type="submit"
-                className="w-full rounded-2xl py-2 flex items-center justify-center gap-2"
-              >
-                Continue
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
+            <button
+              type="submit"
+              className="w-full rounded-2xl py-2 flex items-center justify-center gap-2 bg-blue-600 text-white hover:bg-blue-700"
+            >
+              Continue
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </form>
+        </div>
       </motion.div>
     </FormContainer>
   );

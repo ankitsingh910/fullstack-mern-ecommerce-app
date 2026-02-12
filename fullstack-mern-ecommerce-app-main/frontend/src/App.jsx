@@ -11,15 +11,16 @@ import './App.css'; // keep if you have custom Tailwind overrides
 const App = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const expirationTime = localStorage.getItem('expirationTime');
-    if (expirationTime) {
-      const currentTime = new Date().getTime();
-      if (currentTime > expirationTime) {
-        dispatch(logout());
-      }
-    }
-  }, [dispatch]);
+  // useEffect(() => {
+  //   const expirationTime = localStorage.getItem('expirationTime');
+  //   if (expirationTime) {
+  //     const currentTime = new Date().getTime();
+
+  //     if (currentTime > expirationTime) {
+  //       dispatch(logout());
+  //     }
+  //   }
+  // }, [dispatch]);
 
   return (
     <>

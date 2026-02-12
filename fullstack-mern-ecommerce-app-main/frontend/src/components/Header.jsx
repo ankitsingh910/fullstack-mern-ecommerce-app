@@ -35,7 +35,7 @@ const Header = () => {
           <Link to="/" className="flex items-center space-x-3">
             {/* <img src={logo} alt="ProShop" className="h-10 w-10 rounded-full" /> */}
             <span className="font-bold text-2xl text-gray-800 tracking-tight">
-              VibeShop
+              MYT-interperise
             </span>
           </Link>
 
